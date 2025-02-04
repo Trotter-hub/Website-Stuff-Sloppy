@@ -128,3 +128,13 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+img {
+  max-width: 100%;  /* Ensures images don't exceed their container */
+  height: auto;  /* Keeps the image aspect ratio */
+}
+
+.section img {
+  width: 60%;  /* Adjust percentage as needed */
+  display: block;
+  margin: 0 auto; /* Centers the images */
+}
