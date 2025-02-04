@@ -1,105 +1,66 @@
-/* Reset Defaults */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('nav ul li a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
 
-body {
-  background: #f4f4f4;
-  color: #333;
-}
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 50, // Adjusted for header
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
-/* Header & Navigation */
-header {
-  background: #222;
-  padding: 15px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 50px;
-}
+// Reveal Sections on Scroll
+const sections = document.querySelectorAll('.section');
 
-.logo img {
-  width: 120px;
-}
+const revealOnScroll = () => {
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
 
-nav ul {
-  list-style: none;
-  display: flex;
-}
+        if (sectionTop < windowHeight * 0.85) {
+            section.classList.add('visible');
+        }
+    });
+};
 
-nav ul li {
-  margin-left: 20px;
-}
+// Run revealOnScroll when scrolling
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  transition: 0.3s;
-}
+// Hover Effect for Service List Items
+document.querySelectorAll('.section ul li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transform = 'scale(1.1)';
+        item.style.transition = '0.3s';
+    });
 
-nav ul li a:hover {
-  color: #ff6b6b;
-}
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'scale(1)';
+    });
+});
 
-/* Banner */
-.banner {
-  background: linear-gradient(45deg, #ff6b6b, #ff9f9f);
-  text-align: center;
-  padding: 60px;
-  color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
+// Optional: Basic Contact Form Validation (If You Add a Contact Form)
+const contactForm = document.getElementById('contact-form');
 
-.banner h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-.banner p {
-  font-size: 1.2rem;
-}
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-/* Sections */
-.section {
-  background: white;
-  margin: 40px auto;
-  padding: 40px;
-  max-width: 1000px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-}
+        if (name === '' || email === '' || message === '') {
+            alert('Please fill out all fields.');
+            return;
+        }
 
-.section:hover {
-  transform: scale(1.02);
+        alert('Message sent successfully!');
+        contactForm.reset();
+    });
 }
-
-.section img {
-  width: 100px;
-  margin-bottom: 20px;
-}
-
-.section h2 {
-  font-size: 2rem;
-  color: #333;
-}
-
-.section p {
-  font-size: 1.1rem;
-  color: #666;
-}
-
-/* Footer */
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 20px;
-}
-
