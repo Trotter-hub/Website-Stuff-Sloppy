@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #f4f4f4;
+  background: #f9f9f9;
   color: #333;
 }
 
@@ -47,7 +47,7 @@ nav ul li a:hover {
 
 /* Banner */
 .banner {
-  background: linear-gradient(45deg, #ff6b6b, #ff9f9f);
+  background: linear-gradient(45deg, #007bff, #00c6ff);
   text-align: center;
   padding: 60px;
   color: white;
@@ -92,6 +92,20 @@ nav ul li a:hover {
 .section p {
   font-size: 1.1rem;
   color: #666;
+}
+
+/* Service List */
+.section ul {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.section ul li {
+  font-size: 1rem;
+  color: #007bff;
+  padding: 5px 0;
+  font-weight: bold;
 }
 
 /* Footer */
