@@ -128,13 +128,27 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+/* General Image Styling */
 img {
-  max-width: 50%;  /* Ensures images don't exceed their container */
+  max-width: 100%;  /* Ensures images don't exceed their container */
   height: auto;  /* Keeps the image aspect ratio */
 }
 
+/* Reduce Section Images */
 .section img {
-  width: 30%;  /* Adjust percentage as needed */
+  width: 60%;  /* Adjust as needed (50%, 40%, etc.) */
   display: block;
   margin: 0 auto; /* Centers the images */
+}
+
+/* Logo Image */
+.logo img {
+  width: 150px;  /* Makes the logo smaller */
+}
+
+/* Banner Image */
+.banner img {
+  width: 100%;  /* Makes the banner span full width */
+  max-height: 300px; /* Limits banner height */
+  object-fit: cover; /* Ensures it looks nice */
 }
