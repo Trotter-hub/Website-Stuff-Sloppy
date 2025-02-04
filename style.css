@@ -40,6 +40,18 @@ header .logo img {
   object-fit: cover;  /* Ensures it looks visually balanced */
 }
 
+.banner h1 {
+  font-size: 36px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.banner p {
+  font-size: 18px;
+  color: #666;
+  margin-top: 10px;
+}
+
 /* Main Content Sections */
 .section {
   margin: 40px 0;
@@ -47,10 +59,43 @@ header .logo img {
 }
 
 .section img {
-  width: 20% !important;  /* Shrinks images to 1/5th (20%) of their original size */
+  width: 20%;  /* Shrinks images to 1/5th (20%) of their original size */
   display: block;
   margin: 20px auto; /* Centers the images with spacing */
   max-width: 100%; /* Ensures they scale down in responsive designs */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;  /* Creates space between images */
+  margin-top: 20px;
+}
+
+.image-container img {
+  width: 30%;  /* Shrinks images inside the container to 30% of their original size */
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+.section p {
+  font-size: 18px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.section ul li {
+  margin: 10px 0;
 }
 
 /* Footer Styling */
@@ -69,9 +114,13 @@ footer p {
 /* Responsive Styling */
 @media screen and (max-width: 768px) {
   .section img {
-    width: 50% !important;  /* Makes images a bit bigger on smaller screens */
+    width: 50%;  /* Makes images a bit bigger on smaller screens */
   }
   
+  .image-container img {
+    width: 45%;  /* Increases the image size in the container for small screens */
+  }
+
   .section h2 {
     font-size: 24px;
   }
